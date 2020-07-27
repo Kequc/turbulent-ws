@@ -1,0 +1,32 @@
+{
+  "name": "turbulent-ws",
+  "version": "0.1.0",
+  "description": "simple exercise for websockets",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "ts-node ./src/index.ts",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Kequc/turbulent-ws.git"
+  },
+  "author": "Nathan Lunde-Berry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kequc/turbulent-ws/issues"
+  },
+  "homepage": "https://github.com/Kequc/turbulent-ws#readme",
+  "dependencies": {
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.7",
+    "@types/ws": "^7.2.6",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.3",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
