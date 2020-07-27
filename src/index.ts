@@ -1,30 +1,17 @@
 import * as http from 'http';
 import * as WebSocket from 'ws';
+import App from './app';
+import Storage from './storage';
 
 // constants
 const PORT: number = 1337;
+const FILE_PATH: string = '../store.json';
 
 // setup
 const server = http.createServer();
 const wss = new WebSocket.Server({ server });
-
-// main
-function broadcast (message: string) {
-    wss.clients.forEach((client) => {
-        if (client.readyState !== WebSocket.OPEN) return;
-        client.send(message);
-    });
-}
-
-// init
-wss.on('connection', (ws: WebSocket) => {
-    ws.on('message', (message: string) => {
-        console.log('received: %s', message);
-        ws.send(`Hello, you sent -> ${message}`);
-    });
-
-    ws.send('Hi there, I am a WebSocket server');
-});
+const storage = new Storage({ filePath: FILE_PATH });
+const app = new App({ wss, storage });
 
 // start server
 server.listen(PORT, () => {
