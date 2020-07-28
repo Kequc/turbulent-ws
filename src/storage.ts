@@ -1,17 +1,10 @@
 import * as fs from 'fs';
+import Reminder from './reminder';
+import Logger from './logger';
 
 interface StorageOptions {
     filePath: string;
-    logger?: Logger;
-}
-
-interface Logger {
-    warn: Function;
-}
-
-interface Reminder {
-    time: number;
-    notice: string;
+    logger: Logger;
 }
 
 export default class Storage {
@@ -20,7 +13,7 @@ export default class Storage {
 
     constructor ({ filePath, logger }: StorageOptions) {
         this.filePath = filePath;
-        this.logger = logger || console;
+        this.logger = logger;
     }
 
     async read (): Promise<Array<Reminder>> {

@@ -1,20 +1,19 @@
+import Logger from '../src/logger';
 import Storage from '../src/storage';
-import { eraseStorage, genReminder, setStorage, readStorage } from './test_helpers';
+import { eraseStorage, genReminder, genLogger, setStorage, readStorage } from './test_helpers';
 
 describe('Storage', function () {
-    const FILE_PATH = '../storage_test.json';
+    const FILE_PATH = '../store_test_storage.json';
 
-    let loggerMock;
-    let storage;
+    let logger: Logger;
+    let storage: Storage;
 
     beforeEach(function () {
-        loggerMock = {
-            warn: () => {}
-        };
-        storage = new Storage({ filePath: FILE_PATH, logger: loggerMock });
+        logger = genLogger();
+        storage = new Storage({ filePath: FILE_PATH, logger });
     });
 
-    afterEach(async () => {
+    afterEach(async function () {
         await eraseStorage(FILE_PATH);
     });
 
