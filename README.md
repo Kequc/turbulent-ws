@@ -16,7 +16,7 @@ npm run dev
 
 ### add a reminder
 
-Send a message to the connected websocket server running at `ws://localhost:1337` in the following format to set a reminder that will get sent at that time.
+Send a message to the connected websocket server running at `ws://localhost:1337` in the following format to set a reminder that will get returned to you at that time.
 
 ```
 {
