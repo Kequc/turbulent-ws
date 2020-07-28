@@ -4,7 +4,7 @@ import Scheduler from '../src/scheduler';
 import Storage from '../src/storage';
 import { eraseStorage, genReminder, genError, genApp, setStorage } from './test_helpers';
 
-const FILE_PATH = '../store_test_app.json';
+const FILE_PATH = './store_test_app.json';
 
 describe('App', function () {
     let app: App;

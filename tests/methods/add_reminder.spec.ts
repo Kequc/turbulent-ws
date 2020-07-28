@@ -3,7 +3,7 @@ import App from '../../src/app';
 import { eraseStorage, genReminder, genApp } from '../test_helpers';
 import Reminder from '../../src/reminder';
 
-const FILE_PATH = '../store_test_reminder.json';
+const FILE_PATH = './store_test_reminder.json';
 
 describe('AddReminder', function () {
     let addReminder: AddReminder;

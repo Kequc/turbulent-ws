@@ -7,7 +7,7 @@ import Logger from './logger';
 
 // constants
 const PORT: number = 1337;
-const FILE_PATH: string = '../store.json';
+const FILE_PATH: string = './store.json';
 const logger: Logger = console;
 
 // setup

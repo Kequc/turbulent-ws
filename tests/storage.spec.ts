@@ -3,7 +3,7 @@ import Storage from '../src/storage';
 import { eraseStorage, genReminder, genLogger, setStorage, readStorage } from './test_helpers';
 
 describe('Storage', function () {
-    const FILE_PATH = '../store_test_storage.json';
+    const FILE_PATH = './store_test_storage.json';
 
     let logger: Logger;
     let storage: Storage;
